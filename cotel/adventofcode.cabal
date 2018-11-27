@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 621805835436ad9185b6eed57733912a9316d1904c7a841453cc44aea146fca7
+-- hash: 5fc7ce8ec0421b7f4d2f44d5a90b81dcd490b018b36947f2708e3dfb4ca49b9f
 
 name:           adventofcode
 version:        0.1.0.0
@@ -32,7 +32,9 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      QuickCheck
+    , base >=4.7 && <5
+    , hspec
   default-language: Haskell2010
 
 executable day0-exe
@@ -43,19 +45,24 @@ executable day0-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventofcode
+      QuickCheck
+    , adventofcode
     , base >=4.7 && <5
+    , hspec
   default-language: Haskell2010
 
 test-suite day0-test
   type: exitcode-stdio-1.0
-  main-is: Day0Spec.hs
+  main-is: Spec.hs
   other-modules:
+      Day0Spec
       Paths_adventofcode
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      adventofcode
+      QuickCheck
+    , adventofcode
     , base >=4.7 && <5
+    , hspec
   default-language: Haskell2010
