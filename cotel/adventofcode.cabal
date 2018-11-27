@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 97a7f7a549b56cb445f8cc7ee6d691b74fc21aa784471a64dcc8770cb06af27c
+-- hash: 621805835436ad9185b6eed57733912a9316d1904c7a841453cc44aea146fca7
 
 name:           adventofcode
 version:        0.1.0.0
@@ -26,7 +26,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Day0
   other-modules:
       Paths_adventofcode
   hs-source-dirs:
@@ -35,8 +35,8 @@ library
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable adventofcode-exe
-  main-is: Main.hs
+executable day0-exe
+  main-is: Day0Example.hs
   other-modules:
       Paths_adventofcode
   hs-source-dirs:
@@ -47,9 +47,9 @@ executable adventofcode-exe
     , base >=4.7 && <5
   default-language: Haskell2010
 
-test-suite adventofcode-test
+test-suite day0-test
   type: exitcode-stdio-1.0
-  main-is: Spec.hs
+  main-is: Day0Spec.hs
   other-modules:
       Paths_adventofcode
   hs-source-dirs:

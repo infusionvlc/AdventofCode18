@@ -26,8 +26,8 @@ library:
   source-dirs: src
 
 executables:
-  adventofcode-exe:
-    main:                Main.hs
+  day0-exe:
+    main:                Day0Example.hs
     source-dirs:         app
     ghc-options:
     - -threaded
@@ -37,8 +37,8 @@ executables:
     - adventofcode
 
 tests:
-  adventofcode-test:
-    main:                Spec.hs
+  day0-test:
+    main:                Day0Spec.hs
     source-dirs:         test
     ghc-options:
     - -threaded
