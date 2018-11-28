@@ -1,0 +1,68 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5fc7ce8ec0421b7f4d2f44d5a90b81dcd490b018b36947f2708e3dfb4ca49b9f
+
+name:           adventofcode
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/adventofcode#readme>
+homepage:       https://github.com/githubuser/adventofcode#readme
+bug-reports:    https://github.com/githubuser/adventofcode/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/adventofcode
+
+library
+  exposed-modules:
+      Day0
+  other-modules:
+      Paths_adventofcode
+  hs-source-dirs:
+      src
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
+
+executable day0-exe
+  main-is: Day0Example.hs
+  other-modules:
+      Paths_adventofcode
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , adventofcode
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
+
+test-suite day0-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Day0Spec
+      Paths_adventofcode
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck
+    , adventofcode
+    , base >=4.7 && <5
+    , hspec
+  default-language: Haskell2010
