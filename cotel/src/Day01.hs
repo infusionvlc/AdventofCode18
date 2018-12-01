@@ -2,6 +2,7 @@ module Day01
     ( sumFrequencies
     , parseFrequency
     , firstRepeatedFrequency
+    , firstDuplicate
     )
 where
 

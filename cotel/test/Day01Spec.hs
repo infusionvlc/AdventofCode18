@@ -23,7 +23,7 @@ spec = describe "Day 01 tests" $ do
             it "parseFrequency of -x should return -x" $
                 parseFrequency "-12345" `shouldBe` -12345
     
-    describe "Part 2 problem" $
+    describe "Part 2 problem" $ do
         describe "firstRepeatedFrequency should return the first frequency which appears twice" $ do
             it "+1, -1 -> 0" $
                 firstRepeatedFrequency ["+1", "-1"] `shouldBe` Just 0
@@ -36,3 +36,10 @@ spec = describe "Day 01 tests" $ do
             
             it "+7, +7, -2, -7, -4 -> 14" $
                 firstRepeatedFrequency ["+7", "+7", "-2", "-7", "-4"] `shouldBe` Just 14
+
+        describe "firstDuplicate" $ do
+            it "should return Just x if x is the first repeated element in a collection" $
+                firstDuplicate [1, 2, 3, 1, 6, 3] `shouldBe` Just 1
+            
+            it "should return Nothing if there are no repeated elements in the collection" $
+                firstDuplicate [1, 2, 3, 4, 5] `shouldBe` Nothing
