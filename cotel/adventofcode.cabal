@@ -1,8 +1,10 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5fc7ce8ec0421b7f4d2f44d5a90b81dcd490b018b36947f2708e3dfb4ca49b9f
+-- hash: d9b98dbf97cf69fd02ac323777b16691e2d72d82285f3b478105a033f44aaeb0
 
 name:           adventofcode
 version:        0.1.0.0
@@ -15,10 +17,9 @@ copyright:      2018 Author name here
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
-    ChangeLog.md
     README.md
+    ChangeLog.md
 
 source-repository head
   type: git
@@ -27,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       Day0
+      Day01
   other-modules:
       Paths_adventofcode
   hs-source-dirs:
@@ -34,6 +36,7 @@ library
   build-depends:
       QuickCheck
     , base >=4.7 && <5
+    , containers
     , hspec
   default-language: Haskell2010
 
@@ -48,6 +51,7 @@ executable day0-exe
       QuickCheck
     , adventofcode
     , base >=4.7 && <5
+    , containers
     , hspec
   default-language: Haskell2010
 
@@ -55,6 +59,7 @@ test-suite day0-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Day01Spec
       Day0Spec
       Paths_adventofcode
   hs-source-dirs:
@@ -64,5 +69,6 @@ test-suite day0-test
       QuickCheck
     , adventofcode
     , base >=4.7 && <5
+    , containers
     , hspec
   default-language: Haskell2010
