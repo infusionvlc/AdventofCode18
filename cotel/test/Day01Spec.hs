@@ -23,7 +23,7 @@ spec = describe "Day 01 tests" $ do
             it "parseFrequency of -x should return -x" $
                 parseFrequency "-12345" `shouldBe` -12345
     
-    describe "Part 2 problem" $ do
+    describe "Part 2 problem" $
         describe "firstRepeatedFrequency should return the first frequency which appears twice" $ do
             it "+1, -1 -> 0" $
                 firstRepeatedFrequency ["+1", "-1"] `shouldBe` Just 0
