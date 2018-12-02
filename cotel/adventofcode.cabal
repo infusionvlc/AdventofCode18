@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d9b98dbf97cf69fd02ac323777b16691e2d72d82285f3b478105a033f44aaeb0
+-- hash: 759a5f60110d67976c2509c94bc32ca2859a3e8138239588b57f3402df52050e
 
 name:           adventofcode
 version:        0.1.0.0
@@ -29,6 +29,7 @@ library
   exposed-modules:
       Day0
       Day01
+      Day02
   other-modules:
       Paths_adventofcode
   hs-source-dirs:
@@ -60,6 +61,7 @@ test-suite day0-test
   main-is: Spec.hs
   other-modules:
       Day01Spec
+      Day02Spec
       Day0Spec
       Paths_adventofcode
   hs-source-dirs:
