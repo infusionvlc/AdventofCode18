@@ -24,10 +24,11 @@ tupleAppearances xs | 2 `elem` appearances && 3 `elem` appearances = (1, 1)
 checksum :: (Int, Int) -> Int
 checksum (x, y) = x * y
 
+instance Semigroup Int where
+    (<>) x y = x + y
+
 fullChecksum :: [String] -> Int
-fullChecksum xs = checksum $ foldl (\(a, b) (x, y) -> (a + x, b + y))
-                                   (0, 0)
-                                   (map tupleAppearances xs)
+fullChecksum xs = checksum $ foldl (<>) (0, 0) (map tupleAppearances xs)
 
 -- Part 2
 
@@ -44,5 +45,5 @@ commonLettersOfCorrectIds :: [String] -> String
 commonLettersOfCorrectIds xs = (head . filter differInOneLetter)
     [ fromJust mzs | x <- xs, y <- xs, let mzs = commonWords x y, isJust mzs ]
   where
-    wordLength        = (length . head) xs
+    wordLength = (length . head) xs
     differInOneLetter zs = wordLength - length zs == 1
