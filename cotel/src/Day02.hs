@@ -3,7 +3,7 @@ module Day02
     , tupleAppearances
     , fullChecksum
     , commonLettersOfCorrectIds
-    , commonWords
+    , commonLetters
     )
 where
 
@@ -32,8 +32,8 @@ fullChecksum xs = checksum $ foldl (<>) (0, 0) (map tupleAppearances xs)
 
 -- Part 2
 
-commonWords :: String -> String -> Maybe String
-commonWords xs ys = fmap reverse (go xs ys [] 0 0)
+commonLetters :: String -> String -> Maybe String
+commonLetters xs ys = fmap reverse (go xs ys [] 0 0)
   where
     go xs ys rs pos rep
         | rep > 1                    = Nothing
@@ -43,7 +43,7 @@ commonWords xs ys = fmap reverse (go xs ys [] 0 0)
 
 commonLettersOfCorrectIds :: [String] -> String
 commonLettersOfCorrectIds xs = (head . filter differInOneLetter)
-    [ fromJust mzs | x <- xs, y <- xs, let mzs = commonWords x y, isJust mzs ]
+    [ fromJust mzs | x <- xs, y <- xs, let mzs = commonLetters x y, isJust mzs ]
   where
     wordLength = (length . head) xs
     differInOneLetter zs = wordLength - length zs == 1

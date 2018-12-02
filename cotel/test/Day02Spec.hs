@@ -28,12 +28,12 @@ spec = describe "Day 02 tests" $ do
                 fullChecksum ["abcdef", "bababc", "abbcde", "abcccd", "aabcdd", "abcdee", "ababab"] `shouldBe` 12
 
     describe "Part 2" $ do
-        describe "commonWords" $ do
+        describe "commonLetters" $ do
             it "should return Nothing from abcde and abxyc" $
-                commonWords "abcde" "abxyc" `shouldBe` Nothing
+                commonLetters "abcde" "abxyc" `shouldBe` Nothing
             
             it "should return Just fgij from fghij and fguij" $
-                commonWords "fghij" "fguij" `shouldBe` Just "fgij"
+                commonLetters "fghij" "fguij" `shouldBe` Just "fgij"
 
         describe "commonLettersOfCorrectIds" $
             it "example commonLetters are fgij" $
