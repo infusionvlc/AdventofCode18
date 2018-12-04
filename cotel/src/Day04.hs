@@ -9,6 +9,7 @@ module Day04
     )
 where
 
+import           Common
 import           System.Environment
 import           Text.Printf
 import           Data.Void
@@ -58,15 +59,6 @@ guardMinutesCombination gs =
     let guardId = mostSleepingGuard gs
         minute  = mostSleepingMinute guardId gs
     in  guardId * minute
-
-count :: Eq a => a -> [a] -> Int
-count x = length . filter (x ==)
-
-cardinality :: Ord a => [a] -> Map a Int
-cardinality xs = M.fromListWith (+) [ (x, 1) | x <- xs ]
-
-biggestValueKey :: Ord a => Map k a -> k
-biggestValueKey = fst . maximumBy (comparing snd) . M.toList
 
 -- Part 2
 
