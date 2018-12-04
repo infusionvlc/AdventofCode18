@@ -24,6 +24,8 @@ dependencies:
 - hspec
 - QuickCheck
 - containers
+- time
+- lens
 
 library:
   source-dirs: src
