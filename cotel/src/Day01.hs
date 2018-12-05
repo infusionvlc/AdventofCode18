@@ -7,6 +7,7 @@ module Day01
 where
 
 import qualified Data.Set                      as Set
+import           Common
 
 -- Part 1
 
@@ -23,10 +24,3 @@ firstRepeatedFrequency :: [String] -> Maybe Int
 firstRepeatedFrequency xs =
     let infiniteXs = (cycle . map parseFrequency) xs
     in  firstDuplicate (scanl (+) 0 infiniteXs)
-
-firstDuplicate :: Ord a => [a] -> Maybe a
-firstDuplicate xs = dup' xs Set.empty
-  where
-    dup' [] _ = Nothing
-    dup' (x : xs) s =
-        if Set.member x s then Just x else dup' xs (Set.insert x s)

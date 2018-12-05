@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 786a8c1296b01fbece659f45fa27444d6dd2b0b8fcbd99db587a9073f70b0266
+-- hash: 382b780ff219890fb6b865bafd322c4a78f629ec7acb92b4b0c8132afa16a18a
 
 name:           adventofcode
 version:        0.1.0.0
@@ -27,10 +27,12 @@ source-repository head
 
 library
   exposed-modules:
+      Common
       Day0
       Day01
       Day02
       Day03
+      Day04
   other-modules:
       Paths_adventofcode
   hs-source-dirs:
@@ -40,6 +42,8 @@ library
     , base >=4.7 && <5
     , containers
     , hspec
+    , lens
+    , time
   default-language: Haskell2010
 
 executable day0-exe
@@ -55,6 +59,8 @@ executable day0-exe
     , base >=4.7 && <5
     , containers
     , hspec
+    , lens
+    , time
   default-language: Haskell2010
 
 test-suite day0-test
@@ -64,6 +70,7 @@ test-suite day0-test
       Day01Spec
       Day02Spec
       Day03Spec
+      Day04Spec
       Day0Spec
       Paths_adventofcode
   hs-source-dirs:
@@ -75,4 +82,6 @@ test-suite day0-test
     , base >=4.7 && <5
     , containers
     , hspec
+    , lens
+    , time
   default-language: Haskell2010

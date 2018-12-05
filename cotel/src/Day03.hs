@@ -6,6 +6,7 @@ module Day03
     )
 where
 
+import           Common
 import           Data.List                      ( tails
                                                 , inits
                                                 )
@@ -51,17 +52,3 @@ notOverlappedClaimId cs = head
 
 disjoint :: Ord a => Set a -> Set a -> Bool
 disjoint s1 s2 = Data.Set.null (intersection s1 s2)
-
-{- 
-    `pickOne` returns a combination of a item of a list and all the rest.
-    This way we can compare an item against the other elements of the list.
-
-    IE:
-        - [1] -> (1, [])
-        - [1, 2] -> (1, [2]), (2, [1])
-        - [1, 2, 3] -> (1, [2, 3]), (2, [1, 3]), (3, [1, 2])
--}
-
-pickOne :: [a] -> [(a, [a])]
-pickOne xs = [ (x, l ++ r) | (l, x : r) <- zip (inits xs) (tails xs) ]
-
