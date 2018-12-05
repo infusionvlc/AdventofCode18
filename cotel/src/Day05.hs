@@ -2,6 +2,8 @@ module Day05
     ( processPolymer
     , remainingUnits
     , bestCollapsedPolymer
+    , uniqueUnits
+    , polymersWithoutChars
     )
 where
 
@@ -34,12 +36,15 @@ uniqueUnits = S.fromList . map toLower
 
 polymersWithoutChars :: Polymer -> Set Char -> [Polymer]
 polymersWithoutChars pol chars =
-    [ filter (\a -> abs (ord a - ord c) /= 32) pol | c <- S.elems chars ]
+    [ filter
+          (\a -> let sabs = abs (ord a - ord c) in sabs /= 32 && sabs /= 0)
+          pol
+    | c <- S.elems chars
+    ]
 
 bestCollapsedPolymer :: Polymer -> Int
 bestCollapsedPolymer pol =
-    let 
-        chars = uniqueUnits pol
+    let chars   = uniqueUnits pol
         allPols = polymersWithoutChars pol chars
     in  minimum [ remainingUnits p | p <- allPols ]
 
