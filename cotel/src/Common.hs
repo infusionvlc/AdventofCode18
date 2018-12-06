@@ -1,5 +1,6 @@
 module Common
     ( count
+    , neighbors
     , cardinality
     , biggestValueKey
     , pickOne
@@ -15,6 +16,9 @@ import           Data.Ord                       ( comparing )
 
 count :: Eq a => a -> [a] -> Int
 count x = length . filter (x ==)
+
+neighbors :: [a] -> [(a, a)]
+neighbors xs = zip xs (drop 1 xs)
 
 cardinality :: Ord a => [a] -> Map a Int
 cardinality xs = M.fromListWith (+) [ (x, 1) | x <- xs ]
